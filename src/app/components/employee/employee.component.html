@@ -1,0 +1,74 @@
+<mat-toolbar color="warn">
+        <mat-toolbar-row>
+    
+            <img width="40" alt="Angular Logo" src="assets/img/angularlogo.svg" />
+            <span class="ml-1">Datos del Empleado </span>
+    
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div class="d-flex justify-content-center mt-2">
+            <img src="assets/img/usuarios.png" width="190px" alt="" srcset="">
+    </div>
+
+<form (ngSubmit)="guardar(formulario)" #formulario="ngForm" class="mt-1">
+    <div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-4">
+            
+            <mat-form-field>
+                <mat-label>ID del empleado (Firebase)</mat-label>
+                <input matInput [(ngModel)]="empleado.id" name="id" disabled type="text">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Nombre Completo</mat-label>
+                <input matInput [(ngModel)]="empleado.nombreCompleto" name="nombreCompleto" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Correo Electronico</mat-label>
+                <input matInput [(ngModel)]="empleado.email" name="email" required>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field>
+                <mat-label>Numero telefonico</mat-label>
+                <input matInput #nroTelefono placeholder="Numero telefonico" maxlength="11"
+                    [(ngModel)]="empleado.telefono" name="telefono" required>
+                <mat-hint align="start">{{nroTelefono.value.length}} / 11</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Ciudad</mat-label>
+                <input matInput [(ngModel)]="empleado.ciudad" name="ciudad" required>
+            </mat-form-field>
+
+
+        </div>
+        <div class="col-md-4">
+            <mat-form-field>
+                <mat-label>Area de la empresa o Departamento</mat-label>
+                <input matInput [(ngModel)]="empleado.departamento" name="departamento" required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Fecha de comienzo</mat-label>
+                <input matInput [(ngModel)]="empleado.fechaInicio" name="fechaInicio" type="date" required>
+            </mat-form-field>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-2"><button mat-fab color="primary" alt="Enviar Información" type="submit">
+            <mat-icon>send</mat-icon></button>
+        </div>
+        <div class="col-2"><button mat-fab color="warn" (click)="clear(formulario)" alt="Limpiar todo" type="button">
+            <mat-icon>clear_all</mat-icon>
+        </button>
+    </div>
+    </div>
+</div>
+</form>
