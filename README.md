@@ -1,5 +1,10 @@
 # CrudPrueba
 
+Made With Angular, Angular Material, Bootstrap Grid deployed in Firebase.
+
+Deployed in: https://crud-prueba-5299a.firebaseapp.com/
+![Screenshot](1.jpg)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.8.
 
 ## Development server
